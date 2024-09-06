@@ -1,0 +1,7 @@
+Yolo_Training/football-players-detection-1
+Yolo_Training/models
+runs/
+Yolo_Training/yolov5xu.pt
+Yolo_Training/runs
+*.pt
+output_videos/video.avi
