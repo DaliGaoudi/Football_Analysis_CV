@@ -160,11 +160,13 @@ class Tracker:
         team_1_num_frames = team_ball_control_till_frame[team_ball_control_till_frame == 1].shape[0]
         team_2_num_frames = team_ball_control_till_frame[team_ball_control_till_frame == 2].shape[0]
 
-        team_1 = team_1_num_frames/(team_1_num_frames + team_2_num_frames)
-        team_2 = team_2_num_frames/(team_1_num_frames + team_2_num_frames)
+        try:
+            team_1 = team_1_num_frames/(team_1_num_frames + team_2_num_frames) 
+            team_2 = team_2_num_frames/(team_1_num_frames + team_2_num_frames)
+            cv2.putText(frame, f"team 1 ball control: {team_1 * 100:.2f}%", (1400,900), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,0), 3)
+            cv2.putText(frame, f"team 2 ball control: {team_2 * 100:.2f}%", (1400,950), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,0), 3)
+        except ZeroDivisionError: pass    
 
-        cv2.putText(frame, f"team 1 ball control: {team_1 * 100:.2f}%", (1400,900), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,0), 3)
-        cv2.putText(frame, f"team 2 ball control: {team_2 * 100:.2f}%", (1400,950), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,0), 3)
 
         return frame
 

@@ -5,3 +5,4 @@ Yolo_Training/yolov5xu.pt
 Yolo_Training/runs
 *.pt
 output_videos/video.avi
+assets/vid.mp4
