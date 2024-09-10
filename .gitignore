@@ -6,3 +6,5 @@ Yolo_Training/runs
 *.pt
 output_videos/video.avi
 assets/vid.mp4
+**/.__pycache__
+__pycache__*
